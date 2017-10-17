@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by nexmaniosis on 12/10/17.
  */
-public class Listing {
+public class JUnitListing {
 
     private final String PROJECT_ABS_PATH = "/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/junit5-vanilla-maven/";
 
