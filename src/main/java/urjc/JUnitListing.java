@@ -10,39 +10,57 @@ import java.util.List;
 public class JUnitListing {
 
     private final String PROJECT_ABS_PATH = "/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/junit5-vanilla-maven/";
+    private final String REPORTS_FOLDER = "target/surefire-reports/";
+
+    private File reportsDirectory;
+
+    private File[] reports_nofilter;
+
+    private File[] reports_filter;
+
+    private List reports_filter_name;
 
     /*
-        The list of every test found
+
      */
-    private List testList;
+    private void setReportsDirectory(String path){
+        reportsDirectory = new File(path);
+    }
 
     /*
-
+        Get every file on the folder. No filter.
      */
-    public File getDirectory(){
-        return new File(PROJECT_ABS_PATH + "target/surefire-reports/");
+
+    private void setFiles(File folder){
+        reports_nofilter = folder.listFiles();
+    }
+
+    public File getReportsDirectory() {
+        return reportsDirectory;
+    }
+
+    public File[] getReportsNoFilter() {
+        return reports_nofilter;
     }
 
     /*
 
-     */
+    */
 
-    public File[] getFiles(File folder){
-        return folder.listFiles();
-    }
+    private void setTestList(){
 
-    /*
-
-     */
-    public List getTestList(){
         List testList = new ArrayList<String>();
 
-        for(File f: getFiles(getDirectory())){
+        for(File f: getReportsNoFilter()){
             testList.add(extractName(f));
         }
 
-        return testList;
+        reports_filter_name = testList;
 
+    }
+
+    public List getReports_filter_name() {
+        return reports_filter_name;
     }
 
     private String extractName(File f){
