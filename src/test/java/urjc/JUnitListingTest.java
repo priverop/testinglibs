@@ -1,43 +1,58 @@
 package urjc;
 
+// JUNIT
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.extension.ExtendWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+// JAVA
 import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
+// MOCKITO
+import org.mockito.Mock;
+import com.example.mockito.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by nexmaniosis on 12/10/17.
  */
+
+@ExtendWith(MockitoExtension.class)
 public class JUnitListingTest {
 
     private final String PROJECT_ABS_PATH = "/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/junit5-vanilla-maven/";
+    private final String REPORTS_FOLDER = "target/surefire-reports/";
 
     private final String TESTNAME1 = "TEST-com.example.project.CalculatorTests";
     private final String TESTNAME2 = "TEST-com.example.project.ViewTests";
 
+    // MOCK
+    private static JUnitListing listingObject;
+
+    @BeforeAll
+    void init(){
+        listingObject = new JUnitListing();
+
+    }
+
     @Test
     void getList() {
-        JUnitListing listing = new JUnitListing();
         List testList = new ArrayList<String>();
         testList.add(TESTNAME1);
         testList.add(TESTNAME2);
-        assertEquals(testList, listing.getTestList(), "2 tests.");
+        assertEquals(testList, listingObject.getReports_filter_name(), "Get test list: 2 tests (XML).");
     }
 
     @Test
     void getDirectory() {
-        JUnitListing listing = new JUnitListing();
-        assertEquals(PROJECT_ABS_PATH + "target/surefire-reports/", listing.getDirectory(), "Target SurefireReports Directory");
+        assertEquals(new File(PROJECT_ABS_PATH + ), listingObject.getReportsDirectory(), "Get SurefireReports Directory (FILE)");
     }
 
     @Test
     void getFiles() {
-        JUnitListing listing = new JUnitListing();
         File folder = new File(PROJECT_ABS_PATH + "target/surefire-reports/");
-        assertEquals(2, listing.getFiles(folder).length, "2 expected.");
+        assertEquals(4, listingObject.getReportsNoFilter().length, "Get Files, expect 4 (2txt + 2xml).");
     }
 
 
