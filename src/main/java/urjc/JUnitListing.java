@@ -10,13 +10,12 @@ import org.apache.commons.io.FilenameUtils;
  */
 public class JUnitListing {
 
-    private final String REPORTS_FOLDER = "target/surefire-reports/";
+    private final String REPORTS_FOLDER = "/target/surefire-reports/";
 
     private File reportsDirectory;
 
-    public JUnitListing(String projectPath){
-        reportsDirectory = new File(projectPath + REPORTS_FOLDER);
-
+    public JUnitListing(){
+        reportsDirectory = new File(System.getProperty("user.dir") + REPORTS_FOLDER);
     }
 
     // --- //
