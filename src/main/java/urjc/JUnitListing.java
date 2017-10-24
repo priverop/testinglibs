@@ -14,8 +14,8 @@ public class JUnitListing {
 
     private File reportsDirectory;
 
-    public JUnitListing(){
-        reportsDirectory = new File(System.getProperty("user.dir") + REPORTS_FOLDER);
+    public JUnitListing(String project_path){
+        reportsDirectory = new File( project_path + REPORTS_FOLDER);
     }
 
     // --- //

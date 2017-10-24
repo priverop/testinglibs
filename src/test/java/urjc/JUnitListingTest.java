@@ -26,7 +26,7 @@ public class JUnitListingTest {
 
     @BeforeAll
     static void init(){
-        listingObject = new JUnitListing();
+        listingObject = new JUnitListing(CURRENT_PROJECT_ABS_PATH);
     }
 
     @Test
