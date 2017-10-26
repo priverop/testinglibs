@@ -8,7 +8,7 @@ import java.io.File;
 
 public class JUnitIdentifyTest {
 
-    private final String POM_FILE = "pom.xml";
+    private final String POM_FILE = "/pom.xml";
     private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
 
     private static JUnitIdentify identifyObject;
@@ -20,7 +20,7 @@ public class JUnitIdentifyTest {
 
     @Test
     void getPom() {
-        assertEquals(new File(POM_FILE), identifyObject.getPom(), "Get pom.xml");
+        assertEquals(new File(CURRENT_PROJECT_ABS_PATH+POM_FILE), identifyObject.getPom(), "Get pom.xml");
     }
 
     @Test
