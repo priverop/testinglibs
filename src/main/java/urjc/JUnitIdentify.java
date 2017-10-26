@@ -27,8 +27,9 @@ public class JUnitIdentify {
 
     public Boolean checkJunit5() {
         XPathParser x = new XPathParser();
-        x.readAndFind(getPom(), "");
-        return false;
+        String y = x.readAndFind(getPom(), "//text() = '"+JUNIT5_ARTEFACTID+"' ");
+
+        return Boolean.valueOf(y);
     }
 
 
