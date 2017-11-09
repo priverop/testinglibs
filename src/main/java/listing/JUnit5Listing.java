@@ -18,10 +18,6 @@ public class JUnit5Listing {
         reportsDirectory = new File( project_path + REPORTS_FOLDER);
     }
 
-    // --- //
-    // GET //
-    // --- //
-
     public File getReportsDirectory() {
         return reportsDirectory;
     }
@@ -40,10 +36,6 @@ public class JUnit5Listing {
 
         return testList;
     }
-
-    // ------ //
-    // STATIC //
-    // ------ //
 
     private static String extractName(File f){
         return f.getName();
