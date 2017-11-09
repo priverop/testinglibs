@@ -26,7 +26,7 @@ public class MochaListingTest {
 
     @Test
     void getReportsDirectory() {
-        assertEquals(new File(PROJECT_ABS_PATH + TESTS_FOLDER), listingObject.getReportsDirectory(), "Get Mocha tests Directory (FILE)");
+        assertEquals(new File(PROJECT_ABS_PATH + TESTS_FOLDER), listingObject.getTestsDirectory(), "Get Mocha tests Directory (FILE)");
     }
 
     @Test

@@ -21,8 +21,10 @@ public class JUnit5ListingTest {
     private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
     private final String REPORTS_FOLDER = "/target/surefire-reports/";
 
-    private final String TESTNAME1 = "TEST-JUnit5ListingTest";
-    private final String TESTNAME2 = "TEST-JavaIdentifyTest";
+    private final String TESTNAME1 = "TEST-unit.MochaListingTest";
+    private final String TESTNAME2 = "TEST-unit.JUnit5ListingTest";
+    private final String TESTNAME3 = "TEST-unit.JSIdentifyTest";
+    private final String TESTNAME4 = "TEST-unit.JavaIdentifyTest";
 
     private static JUnit5Listing listingObject;
 
@@ -33,15 +35,17 @@ public class JUnit5ListingTest {
 
     @Test
     void getReportsDirectory() {
-        assertEquals(new File(CURRENT_PROJECT_ABS_PATH + REPORTS_FOLDER), listingObject.getReportsDirectory(), "Get SurefireReports Directory (FILE)");
+        assertEquals(new File(CURRENT_PROJECT_ABS_PATH + REPORTS_FOLDER), listingObject.getTestsDirectory(), "Get SurefireReports Directory (FILE)");
     }
 
     @Test
     void getList() {
         List testList = new ArrayList<String>();
+        testList.add(TESTNAME4);
+        testList.add(TESTNAME3);
         testList.add(TESTNAME2);
         testList.add(TESTNAME1);
-        assertEquals(testList, listingObject.getReportsName_filter(), "Get test list: 2 tests (XML).");
+        assertEquals(testList, listingObject.getReportsName_filter(), "Get test list: 4 tests (XML).");
     }
 
 
