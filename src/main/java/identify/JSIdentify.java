@@ -10,15 +10,18 @@ public class JSIdentify extends AbstractIdentify{
     private static final String MOCHA_ARTEFACTID = "mocha";
 
     public JSIdentify(String project_path){
-        super(project_path, JSON_FILE, MOCHA_ARTEFACTID);
+        super(project_path, JSON_FILE);
     }
 
-    @Override
-    public Boolean checkFramework() {
+    public static String getMochaArtefactID() {
+        return MOCHA_ARTEFACTID;
+    }
+
+    public Boolean checkMocha() {
         JSonManager x = new JSonManager();
         String y = x.readAndFind(getKeyFile(), MOCHA_JSON_KEY);
 
-        return y.equals(getFramework());
+        return y.equals(MOCHA_ARTEFACTID);
     }
 
 }
