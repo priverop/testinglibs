@@ -28,7 +28,7 @@ public class JSIdentifyTest {
 
     @Test
     void getMocha() {
-        assertEquals("mocha", identifyObject.getFramework(), "Find name: mocha");
+        assertEquals("mocha", identifyObject.getMochaArtefactID(), "Find name: mocha");
     }
 
     @Test
@@ -38,6 +38,6 @@ public class JSIdentifyTest {
 
     @Test
     void checkMocha() {
-        assertEquals(true, identifyObject.checkFramework(), "CheckMocha returns true");
+        assertEquals(true, identifyObject.checkMocha(), "CheckMocha returns true");
     }
 }

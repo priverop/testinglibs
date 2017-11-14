@@ -11,22 +11,23 @@ public class JavaIdentifyTest {
 
     private final String POM_FILE = "/pom.xml";
     private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
+    private static final String PROJECT_ABS_PATH = "/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/testng/";
 
     private static JavaIdentify identifyObject;
 
     @BeforeAll
     static void init(){
-        identifyObject = new JavaIdentify(CURRENT_PROJECT_ABS_PATH);
+        identifyObject = new JavaIdentify(PROJECT_ABS_PATH);
     }
 
     @Test
     void getPom() {
-        assertEquals(new File(CURRENT_PROJECT_ABS_PATH+POM_FILE), identifyObject.getKeyFile(), "Get pom.xml");
+        assertEquals(new File(PROJECT_ABS_PATH+POM_FILE), identifyObject.getKeyFile(), "Get pom.xml");
     }
 
     @Test
     void getJunit5() {
-        assertEquals("junit-jupiter-engine", identifyObject.getFramework(), "Find junit-jupiter-engine");
+        assertEquals("junit-jupiter-engine", identifyObject.getJunit5ArtefactID(), "Find junit-jupiter-engine");
     }
 
     @Test
@@ -36,6 +37,11 @@ public class JavaIdentifyTest {
 
     @Test
     void checkJunit5() {
-        assertEquals(true, identifyObject.checkFramework(), "CheckJunit5 returns true");
+        assertEquals(true, identifyObject.checkJunit5(), "CheckJunit5 returns true");
+    }
+
+    @Test
+    void checkTestNG() {
+        assertEquals(true, identifyObject.checkTestNG(), "CheckTestNG returns true");
     }
 }
