@@ -20,7 +20,8 @@ public class JasmineListingTest {
     private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
     private final String TESTS_FOLDER = "/spec/";
 
-    private final String TESTNAME1 = "array";
+    private final String TESTNAME1 = "SpecHelper";
+    private final String TESTNAME2 = "PlayerSpec";
 
     private static JasmineListing listingObject;
 
@@ -36,6 +37,7 @@ public class JasmineListingTest {
     void getList() {
         List testList = new ArrayList<String>();
         testList.add(TESTNAME1);
+        testList.add(TESTNAME2);
         assertEquals(testList, listingObject.getReportsName_filter(), "Get test list: 1 tests (JSON).");
     }
 

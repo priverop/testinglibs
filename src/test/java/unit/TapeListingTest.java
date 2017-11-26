@@ -7,7 +7,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,7 +22,8 @@ public class TapeListingTest {
     private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
     private final String TESTS_FOLDER = "/test/";
 
-    private final String TESTNAME1 = "array";
+    private final ArrayList<String> testsList = new ArrayList<String>(Arrays.asList("test-wrapper",
+            "array", "asserts", "double", "fail", "ok", "second", "too_few", "a", "b", "test-a", "test-b"));
 
     private static TapeListing listingObject;
 
@@ -34,9 +37,7 @@ public class TapeListingTest {
 
     @Test
     void getList() {
-        List testList = new ArrayList<String>();
-        testList.add(TESTNAME1);
-        assertEquals(testList, listingObject.getReportsName_filter(), "Get test list: 1 tests (JSON).");
+        assertEquals(testsList, listingObject.getReportsName_filter(), "Get test list: 1 tests (JSON).");
     }
 
 }
