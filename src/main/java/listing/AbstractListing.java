@@ -1,10 +1,12 @@
 package listing;
 
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collection;
 
 public abstract class AbstractListing {
 
@@ -20,7 +22,9 @@ public abstract class AbstractListing {
 
     public File getTestsDirectory(){ return testsDirectory; }
 
-    public File[] getFiles_no_filter(File folder){ return folder.listFiles(); }
+    public Collection<File> getFiles_no_filter(File folder){
+        return FileUtils.listFiles(folder, null, true);
+    }
 
     public List getReportsName_filter() {
 
