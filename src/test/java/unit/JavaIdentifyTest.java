@@ -11,7 +11,7 @@ public class JavaIdentifyTest {
 
     private final String POM_FILE = "/pom.xml";
     private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
-    private static final String PROJECT_ABS_PATH = "/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/testng/";
+    private static final String PROJECT_ABS_PATH = "/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/junit5-vanilla-maven/";
 
     private static JavaIdentify identifyObject;
 
@@ -42,6 +42,6 @@ public class JavaIdentifyTest {
 
     @Test
     void checkTestNG() {
-        assertEquals(true, identifyObject.checkTestNG(), "CheckTestNG returns true");
+        assertEquals(false, identifyObject.checkTestNG(), "CheckTestNG returns false");
     }
 }
