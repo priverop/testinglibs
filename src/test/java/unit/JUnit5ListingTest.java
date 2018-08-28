@@ -49,7 +49,7 @@ public class JUnit5ListingTest {
         testList.add(TESTNAME2);
         testList.add(TESTNAME1);
         testList.add(TESTNAME6);
-        assertEquals(testList, listingObject.getReportsName_filter(), "Get test list: 4 tests (XML).");
+        assertEquals(testList, listingObject.getReportsName_filter(false), "Get test list: 4 tests (XML).");
     }
 
 

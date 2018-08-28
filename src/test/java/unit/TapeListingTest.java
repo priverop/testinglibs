@@ -37,7 +37,7 @@ public class TapeListingTest {
 
     @Test
     void getList() {
-        assertEquals(testsList, listingObject.getReportsName_filter(), "Get test list: 1 tests (JSON).");
+        assertEquals(testsList, listingObject.getReportsName_filter(false), "Get test list: 1 tests (JSON).");
     }
 
 }

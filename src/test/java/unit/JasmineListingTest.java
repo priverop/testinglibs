@@ -38,7 +38,7 @@ public class JasmineListingTest {
         List testList = new ArrayList<String>();
         testList.add(TESTNAME1);
         testList.add(TESTNAME2);
-        assertEquals(testList, listingObject.getReportsName_filter(), "Get test list: 1 tests (JSON).");
+        assertEquals(testList, listingObject.getReportsName_filter(false), "Get test list: 1 tests (JSON).");
     }
 
 }

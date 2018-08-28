@@ -33,7 +33,7 @@ public class MochaListingTest {
     void getList() {
         List testList = new ArrayList<String>();
         testList.add(TESTNAME1);
-        assertEquals(testList, listingObject.getReportsName_filter(), "Get test list: 1 tests (JSON).");
+        assertEquals(testList, listingObject.getReportsName_filter(false), "Get test list: 1 tests (JSON).");
     }
 
 }
