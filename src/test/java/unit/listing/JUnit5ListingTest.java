@@ -21,13 +21,7 @@ public class JUnit5ListingTest {
     private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
     private final String REPORTS_FOLDER = "/target/surefire-reports/";
 
-    private final String TESTNAME1 = "TEST-unit.MochaListingTest";
-    private final String TESTNAME2 = "TEST-unit.JUnit5ListingTest";
-    private final String TESTNAME3 = "TEST-unit.JSIdentifyTest";
-    private final String TESTNAME4 = "TEST-unit.JavaIdentifyTest";
-    private final String TESTNAME5 = "TEST-unit.JasmineListingTest";
-    private final String TESTNAME6 = "TEST-unit.TapeListingTest";
-    private final String TESTNAME7 = "TEST-unit.PythonListingTest";
+    private final int NUM_TEST = 15;
 
     private static JUnit5Listing listingObject;
 
@@ -42,16 +36,8 @@ public class JUnit5ListingTest {
     }
 
     @Test
-    void getList() {
-        List testList = new ArrayList<String>();
-        testList.add(TESTNAME5);
-        testList.add(TESTNAME4);
-        testList.add(TESTNAME3);
-        testList.add(TESTNAME2);
-        testList.add(TESTNAME1);
-        testList.add(TESTNAME7);
-        testList.add(TESTNAME6);
-        assertEquals(testList, listingObject.getReportsName_filter(false), "Get test list: 4 tests (XML).");
+    void getCountTestList() {
+        assertEquals(NUM_TEST, listingObject.getReportsName_filter(false).size(), "Get number of tests "+NUM_TEST);
     }
 
 
