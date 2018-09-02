@@ -1,4 +1,4 @@
-package unit;
+package unit.listing;
 
 // JUNIT
 import listing.JUnit5Listing;
@@ -27,6 +27,7 @@ public class JUnit5ListingTest {
     private final String TESTNAME4 = "TEST-unit.JavaIdentifyTest";
     private final String TESTNAME5 = "TEST-unit.JasmineListingTest";
     private final String TESTNAME6 = "TEST-unit.TapeListingTest";
+    private final String TESTNAME7 = "TEST-unit.PythonListingTest";
 
     private static JUnit5Listing listingObject;
 
@@ -48,6 +49,7 @@ public class JUnit5ListingTest {
         testList.add(TESTNAME3);
         testList.add(TESTNAME2);
         testList.add(TESTNAME1);
+        testList.add(TESTNAME7);
         testList.add(TESTNAME6);
         assertEquals(testList, listingObject.getReportsName_filter(false), "Get test list: 4 tests (XML).");
     }

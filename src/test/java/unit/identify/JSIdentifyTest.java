@@ -1,4 +1,4 @@
-package unit;
+package unit.identify;
 
 import identify.JSIdentify;
 import org.junit.jupiter.api.BeforeAll;
