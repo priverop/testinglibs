@@ -1,6 +1,12 @@
 # TestingLibs
 A library to manage tests, execute them freely and get awesome statistics. 
 
+## Supported Languages and Frameworks
+- Java: JUNIT4 & 5
+- JavaScript: Mocha, Tape and Jasmine.
+- Python: unittest.
+
+
 ## Trello
 https://trello.com/b/VX81Ex6K
 
