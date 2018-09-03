@@ -1,6 +1,11 @@
 # TestingLibs
 A library to manage tests, execute them freely and get awesome statistics. 
 
+## Features
+- List project tests.
+- Execute tests freely (NOT YET).
+- Get Statistics (NOT YET).
+
 ## Supported Languages and Frameworks
 - Java: JUNIT4 & 5
 - JavaScript: Mocha, Tape and Jasmine.
