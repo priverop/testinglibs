@@ -18,7 +18,7 @@ public class PythonListing extends AbstractListing {
         ProcessBuilder pb = new ProcessBuilder("python3", SCRIPT_NAME);
         pb.directory(new File(PROJECT_ABS_PATH));
         try {
-            Process p = pb.start();
+            pb.start();
         } catch (IOException e) {
             e.printStackTrace();
         }
