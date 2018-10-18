@@ -1,6 +1,7 @@
 package unit.identify;
 
 import identify.JavaIdentify;
+import unit.TestUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,20 +10,20 @@ import java.io.File;
 
 public class JavaIdentifyTest {
 
-    private final String POM_FILE = "/pom.xml";
-    private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
-    private static final String PROJECT_ABS_PATH = "/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/junit5-vanilla-maven/";
+    private static final String POM_FILE = "pom.xml";
 
     private static JavaIdentify identifyObject;
 
     @BeforeAll
     static void init(){
-        identifyObject = new JavaIdentify(PROJECT_ABS_PATH);
+        TestUtils.setProjectAbsPath(POM_FILE);
+
+        identifyObject = new JavaIdentify(TestUtils.getProjectAbsPath());
     }
 
     @Test
     void getPom() {
-        assertEquals(new File(PROJECT_ABS_PATH+POM_FILE), identifyObject.getKeyFile(), "Get pom.xml");
+        assertEquals(new File(TestUtils.getProjectAbsPath() + File.separator + POM_FILE), identifyObject.getKeyFile(), "Get pom.xml");
     }
 
     @Test

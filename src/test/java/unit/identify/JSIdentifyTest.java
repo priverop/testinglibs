@@ -1,6 +1,7 @@
 package unit.identify;
 
 import identify.JSIdentify;
+import unit.TestUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -10,20 +11,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JSIdentifyTest {
 
-    private final String JSON_FILE = "/package.json";
-    private static final String PROJECT_ABS_PATH ="/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/mocha";
-    private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
+    private static final String JSON_FILE = "package.json";
 
     private static JSIdentify identifyObject;
 
     @BeforeAll
     static void init(){
-        identifyObject = new JSIdentify(PROJECT_ABS_PATH);
+        TestUtils.setProjectAbsPath(JSON_FILE);
+
+        identifyObject = new JSIdentify(TestUtils.getProjectAbsPath());
     }
 
     @Test
     void getJson() {
-        assertEquals(new File(PROJECT_ABS_PATH+JSON_FILE), identifyObject.getKeyFile(), "Get package.json");
+        assertEquals(new File(TestUtils.getProjectAbsPath() + File.separator + JSON_FILE), identifyObject.getKeyFile(), "Get package.json");
     }
 
     @Test

@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "test": "mocha"
+  },
+  "name": "mocha",
+  "version": "1.0.0",
+  "description": "Testing",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^3.5.3"
+  },
+  "author": "Pablo Rivero",
+  "license": "ISC"
+}
