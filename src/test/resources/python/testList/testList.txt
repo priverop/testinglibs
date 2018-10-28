@@ -1,0 +1,6 @@
+test_isupper (test.TestStringMethods)
+test_split (test.TestStringMethods)
+test_upper (test.TestStringMethods)
+test_isupper (test2.TestStringMethods)
+test_split (test2.TestStringMethods)
+test_upper (test2.TestStringMethods)
