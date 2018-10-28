@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>es.priverop</groupId>
-  <artifactId>testlist</artifactId>
+  <artifactId>TestingLibs</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>testlist</name>
+  <name>TestingLibs</name>
   <url>https://github.com/priverop/testinglibs</url>
 
   <properties>
