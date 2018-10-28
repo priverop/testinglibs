@@ -6,4 +6,5 @@ addons:
     token:
       secure: "GodpqKCukpBDiDzWLMtV3cPOS0NcTlo2fsqv6vce/+YZAhRHlf5q1Ek0kprcZsscah9sewB8SurR6SjNt4O3SUXCvPA4fYCNSvbZFmHQyE1lKFaK/YJCO7Or5viHDMEQeE6URijxeFiRGdrK9mel/uGQ5vmsX74BrO+AjT78fW5E6EzWEMttvQppzzoxJYQkgahzW058WUfMfgSkEM3sBVMsS6NUlxP43UqxPcOizKuPD5e1PVDCx80n4QQl+1gIaJp8yVpL+j81/l2I24k/T2fk8mQEeOWqpg1hYAUrQb4hnGJ3HUp3WIMIUq2aJwmZkOHwfXtyxJtmecnqRymgK/ee8HxQcfkWVGlHupVhDF58y541kM8WpCqzJmdq3NgwnZ44BjDLWggtFiWcuiCDhQUkui+aXDt0s08/fYxaMEBzi4V+m1iS9djU4SuGYQv1JzIlvN6lnNBxAq/MQNCiXI1/ShQyaA00+HgrdkssB5YFzNduGN092HipSGUZvpH1C/g9GKZHFxi+ZVf/6hB6fSMhivYg/DzZUXudD+BlPNfxn/eRmeVaseRJD2DCe8Iui/zgaAFvMoShuJMvNTGDKy/hSzkCUmfnCLnkzDp8R/XFiFr7xfoFKI12o3cNGfSfc1hsWHgFValVO/cJPdXsgzUBNPge+8fvP+rwmPHjSIU="
 script:
-  - sonar-scanner
+  - mvn clean package sonar:sonar
+
