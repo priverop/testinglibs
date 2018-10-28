@@ -1,5 +1,5 @@
-# TestingLibs
-A library to manage tests, execute them freely and get awesome statistics. 
+# TestingLibs [![Build Status](https://travis-ci.com/priverop/testinglibs.svg?branch=master)](https://travis-ci.com/priverop/testinglibs)
+A library to manage your project tests, execute them freely and get awesome statistics. 
 
 ## Features
 - List project tests.
