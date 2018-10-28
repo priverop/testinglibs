@@ -1,4 +1,5 @@
-# TestingLibs [![Build Status](https://travis-ci.com/priverop/testinglibs.svg?branch=master)](https://travis-ci.com/priverop/testinglibs)
+# TestingLibs [![Build Status](https://travis-ci.com/priverop/testinglibs.svg?branch=master)](https://travis-ci.com/priverop/testinglibs) [![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=es.priverop%3ATestingLibs&metric=alert_status)](https://sonarcloud.io/dashboard?id=es.priverop%3ATestingLibs)
+
 A library to manage your project tests, execute them freely and get awesome statistics. 
 
 ## Features
