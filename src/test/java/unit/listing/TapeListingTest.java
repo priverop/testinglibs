@@ -1,43 +1,37 @@
 package unit.listing;
 
-// JUNIT
-
 import listing.TapeListing;
+import unit.TestUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-// JAVA
-
 public class TapeListingTest {
 
-    private static final String PROJECT_ABS_PATH = "/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/tape/";
-    private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
-    private final String TESTS_FOLDER = "/test/";
+    private static final String PROJECT_FOLDER = "tape";
+    private static final String TESTS_FOLDER = "test";
 
-    private final ArrayList<String> testsList = new ArrayList<String>(Arrays.asList("test-wrapper",
-            "array", "asserts", "double", "fail", "ok", "second", "too_few", "a", "b", "test-a", "test-b"));
+    private final int NUM_TEST = 12;
 
     private static TapeListing listingObject;
 
     @BeforeAll
-    static void init(){ listingObject = new TapeListing(PROJECT_ABS_PATH); }
+    static void init(){
+        TestUtils.setProjectAbsPath(PROJECT_FOLDER);
+
+        listingObject = new TapeListing(TestUtils.getProjectAbsPath()); }
 
     @Test
     void getReportsDirectory() {
-        assertEquals(new File(PROJECT_ABS_PATH + TESTS_FOLDER), listingObject.getTestsDirectory(), "Get Mocha tests Directory (FILE)");
+        assertEquals(new File(TestUtils.getProjectAbsPath() + File.separator + TESTS_FOLDER), listingObject.getTestsDirectory(), "Get Mocha tests Directory (FILE)");
     }
 
     @Test
-    void getList() {
-        assertEquals(testsList, listingObject.getReportsName_filter(false), "Get test list: 1 tests (JSON).");
+    void getCountList() {
+        assertEquals(NUM_TEST, listingObject.getReportsName_filter(false).size(), "Get test list: 1 tests (JSON).");
     }
 
 }

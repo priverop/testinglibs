@@ -22,7 +22,7 @@ public abstract class AbstractListing {
     public AbstractListing(String project_path, String test_folder, String tests_extension){
         testsFolder = test_folder;
         testsExtension = tests_extension;
-        testsDirectory = new File (project_path + testsFolder);
+        testsDirectory = new File (project_path + File.separator + testsFolder);
     }
 
     public File getTestsDirectory(){ return testsDirectory; }

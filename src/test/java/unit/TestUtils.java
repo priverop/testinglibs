@@ -1,7 +1,5 @@
 package unit;
 
-import unit.identify.JavaIdentifyTest;
-
 import java.io.File;
 
 public class TestUtils {
@@ -10,7 +8,10 @@ public class TestUtils {
 
     public static void setProjectAbsPath(String KeyFileName){
         File resfile = new File(TestUtils.class.getClassLoader().getResource(KeyFileName).getFile());
-        PROJECT_ABS_PATH = resfile.getParent();
+        if(resfile.isDirectory())
+            PROJECT_ABS_PATH = resfile.getPath();
+        else
+            PROJECT_ABS_PATH = resfile.getParent();
     }
 
     public static String getProjectAbsPath(){

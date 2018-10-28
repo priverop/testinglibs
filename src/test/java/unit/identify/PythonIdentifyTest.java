@@ -1,6 +1,7 @@
 package unit.identify;
 
 import identify.PythonIdentify;
+import unit.TestUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -10,24 +11,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PythonIdentifyTest {
 
-    private final String EXTENSION = ".py";
-    private static final String PROJECT_ABS_PATH ="/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/python/";
+    public static final String PY_FILE = "discover.py";
+    public static final String PY_EXTENSION = ".py";
 
     private static PythonIdentify identifyObject;
 
     @BeforeAll
     static void init(){
-        identifyObject = new PythonIdentify(PROJECT_ABS_PATH);
+        TestUtils.setProjectAbsPath(PY_FILE);
+        identifyObject = new PythonIdentify(TestUtils.getProjectAbsPath());
     }
 
     @Test
-    void getJson() {
-        assertEquals(new File(PROJECT_ABS_PATH), identifyObject.getDir(), "Get python dir");
+    void getDir() {
+        assertEquals(new File(TestUtils.getProjectAbsPath()), identifyObject.getDir(), "Get python dir");
     }
 
     @Test
     void getExtension() {
-        assertEquals(EXTENSION, identifyObject.getExtension(), "PY extension");
+        assertEquals(PY_EXTENSION, identifyObject.getExtension(), "PY extension");
     }
 
     @Test

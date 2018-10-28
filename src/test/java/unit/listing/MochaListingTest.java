@@ -1,32 +1,35 @@
 package unit.listing;
 
-// JUNIT
 import listing.MochaListing;
+import unit.TestUtils;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-// JAVA
+
 import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
 
 public class MochaListingTest {
 
-    private static final String PROJECT_ABS_PATH = "/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/mocha/";
-    private static final String CURRENT_PROJECT_ABS_PATH = "/Users/nexmaniosis/testinglibs";
-    private final String TESTS_FOLDER = "/test/";
+    private static final String PROJECT_FOLDER = "mocha";
+    private static final String TESTS_FOLDER = "test";
 
     private final String TESTNAME1 = "array";
 
     private static MochaListing listingObject;
 
     @BeforeAll
-    static void init(){ listingObject = new MochaListing(PROJECT_ABS_PATH); }
+    static void init(){
+        TestUtils.setProjectAbsPath(PROJECT_FOLDER);
+
+        listingObject = new MochaListing(TestUtils.getProjectAbsPath());
+    }
 
     @Test
     void getReportsDirectory() {
-        assertEquals(new File(PROJECT_ABS_PATH + TESTS_FOLDER), listingObject.getTestsDirectory(), "Get Mocha tests Directory (FILE)");
+        assertEquals(new File(TestUtils.getProjectAbsPath() + File.separator + TESTS_FOLDER), listingObject.getTestsDirectory(), "Get Mocha tests Directory (FILE)");
     }
 
     @Test
