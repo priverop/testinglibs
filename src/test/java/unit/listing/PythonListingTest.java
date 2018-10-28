@@ -22,7 +22,6 @@ public class PythonListingTest {
     static void init(){
         TestUtils.setProjectAbsPath(PROJECT_FOLDER);
         listingObject = new PythonListing(TestUtils.getProjectAbsPath());
-        listingObject.executeListingScript();
     }
 
     @Test
