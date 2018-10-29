@@ -16,7 +16,7 @@ public class JUnit5ListingTest {
     private static final String PROJECT_FOLDER = "java";
     private static final String TESTS_FOLDER = "target/surefire-reports";
 
-    private final int NUM_TEST = 2;
+    private final int NUM_TEST = 4;
 
     private static JUnit5Listing listingObject;
 

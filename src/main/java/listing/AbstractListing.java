@@ -19,14 +19,12 @@ public abstract class AbstractListing {
 
     static final Logger LOGGER = Logger.getLogger( AbstractListing.class.getName() );
 
-    private String testsFolder;
     private File testsDirectory;
     private String testsExtension;
 
     AbstractListing(String projectPath, String testFolder, String testsExtension){
-        testsFolder = testFolder;
         this.testsExtension = testsExtension;
-        testsDirectory = new File (projectPath + File.separator + testsFolder);
+        testsDirectory = new File (projectPath + File.separator + testFolder);
     }
 
     public File getTestsDirectory(){ return testsDirectory; }
@@ -42,7 +40,7 @@ public abstract class AbstractListing {
         for (File f : this.getFiles(this.getTestsDirectory())) {
             if(uniqueFile)
                 testList = this.getReportsNamesFromFile(extractName(f));
-            else if (hasExtension(f, testsExtension))
+            else if (hasExtension(f, this.testsExtension))
                 testList.add(filterName(extractName(f)));
         }
 
