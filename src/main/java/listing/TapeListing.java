@@ -1,7 +1,5 @@
 package listing;
 
-import java.io.File;
-
 public class TapeListing extends AbstractListing{
 
     private static final String TESTS_FOLDER = "/test/";

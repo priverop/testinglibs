@@ -2,6 +2,7 @@ package listing;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
 
 public class PythonListing extends AbstractListing {
 
@@ -20,7 +21,7 @@ public class PythonListing extends AbstractListing {
         try {
             pb.start();
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, e.toString(), e);
         }
     }
 

@@ -1,5 +1,6 @@
 package utilities;
 
+import com.sun.media.jfxmedia.logging.Logger;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -13,8 +14,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Level;
 
 public class XPathParser {
+
+    private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger( XPathParser.class.getName() );
+
 
     public String readAndFind(File f, String expression){
 
@@ -26,24 +31,10 @@ public class XPathParser {
             DocumentBuilder builder = builderFactory.newDocumentBuilder();
             Document xmlDocument = builder.parse(fileIS);
             XPath xPath = XPathFactory.newInstance().newXPath();
-            //Node node = (Node) xPath.compile(expression).evaluate(xmlDocument, XPathConstants.NODESET);
-            //result = node.getTextContent();
             result = xPath.evaluate(expression, xmlDocument);
         }
-        catch (FileNotFoundException e){
-            e.printStackTrace();
-        }
-        catch (ParserConfigurationException e){
-            e.printStackTrace();
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        catch (SAXException e){
-            e.printStackTrace();
-        }
-        catch (XPathExpressionException e){
-            e.printStackTrace();
+        catch (XPathExpressionException | SAXException | IOException | ParserConfigurationException e){
+            LOGGER.log(Level.SEVERE, e.toString(), e);
         }
 
         return result;

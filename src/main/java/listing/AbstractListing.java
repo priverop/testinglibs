@@ -12,8 +12,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Collection;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public abstract class AbstractListing {
+
+    protected static final Logger LOGGER = Logger.getLogger( AbstractListing.class.getName() );
 
     protected static String testsFolder;
     protected static File testsDirectory;
@@ -53,7 +57,7 @@ public abstract class AbstractListing {
         }
         catch (IOException e)
         {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, e.toString(), e);
         }
         return lines;
     }
