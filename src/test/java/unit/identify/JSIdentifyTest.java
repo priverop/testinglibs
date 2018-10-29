@@ -41,4 +41,14 @@ public class JSIdentifyTest {
     void checkMocha() {
         assertEquals(true, identifyObject.checkMocha(), "CheckMocha returns true");
     }
+
+    @Test
+    void checkJasmine() {
+        assertEquals(false, identifyObject.checkJasmine(), "CheckJasmine returns true");
+    }
+
+    @Test
+    void checkTape() {
+        assertEquals(false, identifyObject.checkTape(), "CheckTape returns true");
+    }
 }

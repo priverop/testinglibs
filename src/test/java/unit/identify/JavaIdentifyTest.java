@@ -22,6 +22,11 @@ public class JavaIdentifyTest {
     }
 
     @Test
+    void checkKeyFile(){
+        assertEquals(true, identifyObject.checkKeyFile());
+    }
+
+    @Test
     void getPom() {
         assertEquals(new File(TestUtils.getProjectAbsPath() + File.separator + POM_FILE), identifyObject.getKeyFile(), "Get pom.xml");
     }
