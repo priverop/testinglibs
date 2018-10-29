@@ -31,7 +31,7 @@ public class TapeListingTest {
 
     @Test
     void getCountList() {
-        assertEquals(NUM_TEST, listingObject.getReportsName_filter(false).size(), "Get test list: 1 tests (JSON).");
+        assertEquals(NUM_TEST, listingObject.getFilteredReports(false).size(), "Get test list: 1 tests (JSON).");
     }
 
 }

@@ -11,8 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PythonIdentifyTest {
 
-    public static final String PY_FILE = "discover.py";
-    public static final String PY_EXTENSION = ".py";
+    private static final String PY_FILE = "discover.py";
+    private static final String PY_EXTENSION = ".py";
 
     private static PythonIdentify identifyObject;
 

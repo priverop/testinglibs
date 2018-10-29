@@ -23,23 +23,23 @@ public abstract class AbstractListing {
     private File testsDirectory;
     private String testsExtension;
 
-    AbstractListing(String project_path, String test_folder, String tests_extension){
-        testsFolder = test_folder;
-        testsExtension = tests_extension;
-        testsDirectory = new File (project_path + File.separator + testsFolder);
+    AbstractListing(String projectPath, String testFolder, String testsExtension){
+        testsFolder = testFolder;
+        this.testsExtension = testsExtension;
+        testsDirectory = new File (projectPath + File.separator + testsFolder);
     }
 
     public File getTestsDirectory(){ return testsDirectory; }
 
-    private Collection<File> getFiles_no_filter(File folder){
+    private Collection<File> getFiles(File folder){
         return FileUtils.listFiles(folder, null, true);
     }
 
-    public List getReportsName_filter(boolean uniqueFile) {
+    public List getFilteredReports(boolean uniqueFile) {
 
-        List testList = new ArrayList<String>();
+        List<String> testList = new ArrayList<>();
 
-        for (File f : this.getFiles_no_filter(this.getTestsDirectory())) {
+        for (File f : this.getFiles(this.getTestsDirectory())) {
             if(uniqueFile)
                 testList = this.getReportsNamesFromFile(extractName(f));
             else if (hasExtension(f, testsExtension))
@@ -49,7 +49,7 @@ public abstract class AbstractListing {
         return testList;
     }
 
-    public List getReportsNamesFromFile(String fileName){
+    public List<String> getReportsNamesFromFile(String fileName){
         List lines = Collections.emptyList();
         try
         {

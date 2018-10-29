@@ -6,17 +6,17 @@ import utilities.JSonManager;
 public class JSIdentify extends AbstractIdentify{
 
     private static final String JSON_FILE = "/package.json";
-    private final String JSON_KEY = "name";
-    private final String MOCHA_ARTEFACTID = "mocha";
-    private final String JASMINE_ARTEFACTID = "jasmine-core";
-    private final String TAPE_ARTEFACTID = "tape";
+    private static final String JSON_KEY = "name";
+    private static final String MOCHA_ARTEFACTID = "mocha";
+    private static final String JASMINE_ARTEFACTID = "jasmine-core";
+    private static final String TAPE_ARTEFACTID = "tape";
 
-    public JSIdentify(String project_path){
-        super(project_path, JSON_FILE);
+    public JSIdentify(String projectPath){
+        super(projectPath, JSON_FILE);
     }
 
     public String getMochaArtefactID() {
-        return this.MOCHA_ARTEFACTID;
+        return MOCHA_ARTEFACTID;
     }
 
     public Boolean checkMocha() {

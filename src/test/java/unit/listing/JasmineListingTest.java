@@ -7,8 +7,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -35,7 +33,7 @@ public class JasmineListingTest {
 
     @Test
     void getList() {
-        assertEquals(NUM_TESTS, listingObject.getReportsName_filter(false).size(), "Get test list: 1 tests (JSON).");
+        assertEquals(NUM_TESTS, listingObject.getFilteredReports(false).size(), "Get test list: 1 tests (JSON).");
     }
 
 }

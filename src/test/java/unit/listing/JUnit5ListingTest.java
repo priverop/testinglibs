@@ -34,7 +34,7 @@ public class JUnit5ListingTest {
 
     @Test
     void getCountTestList() {
-        assertEquals(NUM_TEST, listingObject.getReportsName_filter(false).size(), "Get number of tests "+NUM_TEST);
+        assertEquals(NUM_TEST, listingObject.getFilteredReports(false).size(), "Get number of tests "+NUM_TEST);
     }
 
 

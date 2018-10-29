@@ -37,6 +37,6 @@ public class PythonListingTest {
 
     @Test
     void getList() {
-        assertEquals(NUM_TESTS, listingObject.getReportsName_filter(true).size(), "Get test list: 6 tests (TXT).");
+        assertEquals(NUM_TESTS, listingObject.getFilteredReports(true).size(), "Get test list: 6 tests (TXT).");
     }
 }

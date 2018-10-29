@@ -1,34 +1,44 @@
 package identify;
 
 import java.io.File;
+import java.util.logging.Level;
 
 public class PythonIdentify {
 
-    private final String PYTHON_EXTENSION = ".py";
-    private File project_dir;
+    private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger( PythonIdentify.class.getName() );
+
+    private static final String PYTHON_EXTENSION = ".py";
+    private File projectDir;
 
     // Why not abstract??
-    public PythonIdentify(String project_path){
-        project_dir = new File(project_path);
+    public PythonIdentify(String projectPath){
+        projectDir = new File(projectPath);
     }
 
     public Boolean checkPython(){
 
         boolean found = false;
 
-        for (File file : getDir().listFiles()) {
-            if (file.getName().endsWith((getExtension())))
-                found = true;
+        File[] fileList = getDir().listFiles();
 
+        if(fileList != null){
+            for (File file : fileList) {
+                if (file.getName().endsWith((getExtension())))
+                    found = true;
+
+            }
         }
+        else
+            LOGGER.log(Level.INFO, "0 files found in " + getDir());
+
         return found;
     }
 
     public File getDir(){
-        return this.project_dir;
+        return this.projectDir;
     }
 
     public String getExtension(){
-        return this.PYTHON_EXTENSION;
+        return PYTHON_EXTENSION;
     }
 }

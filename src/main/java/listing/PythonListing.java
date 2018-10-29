@@ -11,8 +11,8 @@ public class PythonListing extends AbstractListing {
     private static final String PROJECT_ABS_PATH = "/Users/nexmaniosis/Google Drive/Universidad/TestingLibs - DOCS/python/";
     private static final String SCRIPT_NAME = "discover.py";
 
-    public PythonListing(String project_path){
-        super(project_path, TESTS_FOLDER, TESTS_EXTENSION);
+    public PythonListing(String projectPath){
+        super(projectPath, TESTS_FOLDER, TESTS_EXTENSION);
     }
 
     public void executeListingScript(){

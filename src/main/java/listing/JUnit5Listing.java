@@ -8,8 +8,8 @@ public class JUnit5Listing extends AbstractListing{
     private static final String TESTS_FOLDER = "/target/surefire-reports/";
     private static final String TESTS_EXTENSION = "xml";
 
-    public JUnit5Listing(String project_path){
-        super(project_path, TESTS_FOLDER, TESTS_EXTENSION);
+    public JUnit5Listing(String projectPath){
+        super(projectPath, TESTS_FOLDER, TESTS_EXTENSION);
     }
 
 }

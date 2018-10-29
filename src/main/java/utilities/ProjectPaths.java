@@ -2,13 +2,13 @@ package utilities;
 
 public class ProjectPaths {
 
-    private String project_path;
+    private String projectPath;
 
     public ProjectPaths(){
-        project_path = System.getProperty("user.dir");
+        projectPath = System.getProperty("user.dir");
     }
 
-    public String getProject_path() {
-        return project_path;
+    public String getProjectPath() {
+        return projectPath;
     }
 }

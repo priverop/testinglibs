@@ -19,18 +19,16 @@ import java.io.File;
 
 public abstract class AbstractIdentify {
 
-    protected File keyFile;
-    protected String KEYFILENAME;
+    private File keyFile;
 
     /**
      * Class constructor.
-     * @param project_path - will be used to compose the Key File path
-     * @param keyFileName
+     * @param projectPath - will be used to compose the Key File path.
+     * @param fileName - Name of the Key File.
      */
 
-    public AbstractIdentify(String project_path, String keyFileName){
-        KEYFILENAME = keyFileName;
-        keyFile = new File(project_path + KEYFILENAME);
+    AbstractIdentify(String projectPath, String fileName){
+        keyFile = new File(projectPath + fileName);
     }
 
     /**
