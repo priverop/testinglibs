@@ -20,7 +20,6 @@ public class XPathParser {
 
     private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger( XPathParser.class.getName() );
 
-
     public String readAndFind(File f, String expression){
 
         String result = "error";

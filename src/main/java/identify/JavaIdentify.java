@@ -6,15 +6,15 @@ import utilities.XPathParser;
 public class JavaIdentify extends AbstractIdentify {
 
     private static final String POM_FILE = "/pom.xml";
-    private static final String JUNIT5_ARTEFACTID = "junit-jupiter-engine";
-    private static final String TESTNG_ARTEFACTID = "testng";
+    private final String JUNIT5_ARTEFACTID = "junit-jupiter-engine";
+    private final String TESTNG_ARTEFACTID = "testng";
 
     public JavaIdentify(String project_path){
         super(project_path, POM_FILE);
     }
 
-    public static String getJunit5ArtefactID() {
-        return JUNIT5_ARTEFACTID;
+    public String getJunit5ArtefactID() {
+        return this.JUNIT5_ARTEFACTID;
     }
 
     public Boolean checkJunit5() {

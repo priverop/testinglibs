@@ -17,13 +17,13 @@ import java.util.logging.Level;
 
 public abstract class AbstractListing {
 
-    protected static final Logger LOGGER = Logger.getLogger( AbstractListing.class.getName() );
+    static final Logger LOGGER = Logger.getLogger( AbstractListing.class.getName() );
 
-    protected static String testsFolder;
-    protected static File testsDirectory;
-    protected static String testsExtension;
+    private String testsFolder;
+    private File testsDirectory;
+    private String testsExtension;
 
-    public AbstractListing(String project_path, String test_folder, String tests_extension){
+    AbstractListing(String project_path, String test_folder, String tests_extension){
         testsFolder = test_folder;
         testsExtension = tests_extension;
         testsDirectory = new File (project_path + File.separator + testsFolder);
@@ -31,7 +31,7 @@ public abstract class AbstractListing {
 
     public File getTestsDirectory(){ return testsDirectory; }
 
-    public Collection<File> getFiles_no_filter(File folder){
+    private Collection<File> getFiles_no_filter(File folder){
         return FileUtils.listFiles(folder, null, true);
     }
 

@@ -19,8 +19,8 @@ import java.io.File;
 
 public abstract class AbstractIdentify {
 
-    protected static File keyFile;
-    protected static String KEYFILENAME;
+    protected File keyFile;
+    protected String KEYFILENAME;
 
     /**
      * Class constructor.

@@ -4,9 +4,10 @@ import java.io.File;
 
 public class PythonIdentify {
 
-    private static final String PYTHON_EXTENSION = ".py";
-    private static File project_dir;
+    private final String PYTHON_EXTENSION = ".py";
+    private File project_dir;
 
+    // Why not abstract??
     public PythonIdentify(String project_path){
         project_dir = new File(project_path);
     }
