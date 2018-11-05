@@ -10,6 +10,7 @@ public class ResourceManager {
 
     public static String getResourcePath(String KeyFileName){
         File resource = null;
+        String path = null;
         try{
             resource = new File(ResourceManager.class.getClassLoader().getResource(KeyFileName).getFile());
         }
@@ -18,16 +19,16 @@ public class ResourceManager {
         }
         finally {
             if(resource != null && resource.isDirectory())
-                return resource.getPath();
+                path = resource.getPath();
             else if (resource != null) {
-                return resource.getParent();
+                path = resource.getParent();
             }
             else{
                 LOGGER.log(Level.SEVERE, "Can't find resource: " +KeyFileName);
             }
         }
 
-        return null;
+        return path;
 
     }
 
