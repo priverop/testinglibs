@@ -19,16 +19,14 @@ public class PythonListing extends AbstractListing {
     }
 
     public void createListingScript(){
-        String scriptPath = ResourceManager.getResourcePath(SCRIPT_NAME);
-
+        String scriptPath = ResourceManager.getResourcePath(SCRIPT_NAME) + File.separator + SCRIPT_NAME;
         try {
-            FileUtils.copyFileToDirectory(new File(scriptPath), new File(this.getProjectPath()));
+            FileUtils.copyFileToDirectory(new File(scriptPath),
+                    new File(this.getProjectPath()));
         }
         catch (IOException e){
             LOGGER.log(Level.SEVERE, e.toString(), e);
         }
-
-
     }
 
     public void executeListingScript(){
