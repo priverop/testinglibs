@@ -8,11 +8,15 @@ public class ResourceManager {
 
     private static final Logger LOGGER = Logger.getLogger( ResourceManager.class.getName() );
 
-    public static String getResourcePath(String KeyFileName){
+    private ResourceManager() {
+        throw new IllegalStateException("Utility class");
+    }
+
+    public static String getResourcePath(String keyFileName){
         File resource = null;
         String path = null;
         try{
-            resource = new File(ResourceManager.class.getClassLoader().getResource(KeyFileName).getFile());
+            resource = new File(ResourceManager.class.getClassLoader().getResource(keyFileName).getFile());
         }
         catch (NullPointerException e){
             LOGGER.log(Level.SEVERE, e.toString(), e);
@@ -24,7 +28,7 @@ public class ResourceManager {
                 path = resource.getParent();
             }
             else{
-                LOGGER.log(Level.SEVERE, "Can't find resource: " +KeyFileName);
+                LOGGER.log(Level.SEVERE, "Cant find resource: {0}", keyFileName);
             }
         }
 
