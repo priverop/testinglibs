@@ -29,7 +29,8 @@ public abstract class AbstractListing {
         testsDirectory = new File (projectPath + File.separator + testFolder);
     }
 
-    protected String getProjectPath(){ return this.projectPath; }
+    public String getProjectPath(){ return this.projectPath; }
+
     public File getTestsDirectory(){ return testsDirectory; }
 
     private Collection<File> getFiles(File folder){
