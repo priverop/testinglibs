@@ -21,12 +21,15 @@ public abstract class AbstractListing {
 
     private File testsDirectory;
     private String testsExtension;
+    private String projectPath;
 
     AbstractListing(String projectPath, String testFolder, String testsExtension){
         this.testsExtension = testsExtension;
+        this.projectPath = projectPath;
         testsDirectory = new File (projectPath + File.separator + testFolder);
     }
 
+    protected String getProjectPath(){ return this.projectPath; }
     public File getTestsDirectory(){ return testsDirectory; }
 
     private Collection<File> getFiles(File folder){
