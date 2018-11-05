@@ -3,6 +3,7 @@ package utilities;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -16,15 +17,16 @@ import java.util.logging.Level;
 
 public class XPathParser {
 
-    private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger( XPathParser.class.getName() );
+    private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(
+            XPathParser.class.getName() );
 
     public String readAndFind(File f, String expression){
 
         String result = "error";
 
-        try{
-            FileInputStream fileIS = new FileInputStream(f);
+        try(FileInputStream fileIS = new FileInputStream(f)){
             DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+            builderFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
             DocumentBuilder builder = builderFactory.newDocumentBuilder();
             Document xmlDocument = builder.parse(fileIS);
             XPath xPath = XPathFactory.newInstance().newXPath();
